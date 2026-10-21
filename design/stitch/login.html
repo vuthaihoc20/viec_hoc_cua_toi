@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Đăng nhập - Việc học của tôi</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#4d44e3",
+            "on-primary-fixed": "#0f0069",
+            "outline-variant": "#c7c4d8",
+            "secondary": "#006c49",
+            "background": "#f7f9fb",
+            "primary": "#3525cd",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e0e3e5",
+            "on-surface": "#191c1e",
+            "on-secondary-fixed": "#002113",
+            "on-primary-container": "#dad7ff",
+            "tertiary-fixed": "#ffdad7",
+            "surface-container-highest": "#e0e3e5",
+            "primary-container": "#4f46e5",
+            "on-error": "#ffffff",
+            "surface-container": "#eceef0",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#2d3133",
+            "tertiary-fixed-dim": "#ffb3ad",
+            "surface-container-high": "#e6e8ea",
+            "on-primary-fixed-variant": "#3323cc",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#410004",
+            "secondary-container": "#6cf8bb",
+            "on-tertiary-fixed-variant": "#930013",
+            "primary-fixed": "#e2dfff",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f2f4f6",
+            "on-error-container": "#93000a",
+            "on-background": "#191c1e",
+            "inverse-on-surface": "#eff1f3",
+            "surface-bright": "#f7f9fb",
+            "surface": "#f7f9fb",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#005236",
+            "outline": "#777587",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#6ffbbe",
+            "on-tertiary-container": "#ffd0cc",
+            "tertiary": "#960014",
+            "secondary-fixed-dim": "#4edea3",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-surface-variant": "#464555",
+            "tertiary-container": "#bc1d25",
+            "inverse-primary": "#c3c0ff",
+            "surface-dim": "#d8dadc",
+            "on-secondary-container": "#00714d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "0.75rem",
+            "gutter": "1.25rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "space-xl": "2rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "title-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md min-h-screen flex flex-col justify-between selection:bg-primary-fixed selection:text-primary relative antialiased">
+<!-- Subtle decorative ambient elements -->
+<div aria-hidden="true" class="fixed inset-0 pointer-events-none overflow-hidden">
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-fixed/25 blur-3xl"></div>
+<div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-secondary-container/20 blur-3xl"></div>
+</div>
+<!-- Header Branding Anchor (Linear context, simplified without navigation tabs) -->
+<header class="w-full relative z-10 pt-space-lg px-margin-mobile md:px-margin">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<a class="flex items-center gap-space-xs group focus:outline-none" href="#">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm group-hover:scale-98 transition-transform duration-100 ease-in-out">
+<span class="material-symbols-outlined text-[20px]" data-icon="school">school</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">Việc học của tôi</span>
+</a>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+<span class="hidden sm:inline">Không gian học tập tập trung</span>
+</div>
+</div>
+</header>
+<!-- Main Centered Authentication Canvas -->
+<main class="w-full flex-grow flex items-center justify-center px-margin-mobile md:px-margin py-space-xl relative z-10">
+<div class="w-full max-w-[440px]">
+<!-- Card Container (Level 1 Elevation + Paper aesthetic) -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-high shadow-lg p-space-lg md:p-space-xl transition-all">
+<!-- Header Information inside Card -->
+<div class="text-center mb-space-lg">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-fixed text-primary mb-space-sm shadow-sm">
+<span class="material-symbols-outlined text-[26px]" data-icon="menu_book">menu_book</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Đăng nhập tài khoản</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-xs mx-auto">
+            Không gian ghi chú và theo dõi tiến độ học tập mỗi ngày
+          </p>
+</div>
+<!-- Login Form -->
+<form class="space-y-space-md" onsubmit="event.preventDefault();">
+<!-- Email Field -->
+<div class="space-y-1">
+<label class="block font-title-sm text-title-sm text-on-surface" for="email">
+              Địa chỉ Email
+            </label>
+<div class="relative rounded-lg shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+</div>
+<input class="block w-full h-10 pl-10 pr-3 bg-surface-container-lowest border border-outline-variant/60 rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150" id="email" name="email" placeholder="vidu@sinhvien.edu.vn" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-1">
+<label class="block font-title-sm text-title-sm text-on-surface" for="password">
+              Mật khẩu
+            </label>
+<div class="relative rounded-lg shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+</div>
+<input class="block w-full h-10 pl-10 pr-10 bg-surface-container-lowest border border-outline-variant/60 rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button aria-label="Hiện hoặc ẩn mật khẩu" class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors focus:outline-none" id="toggle-password" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility" id="password-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Options Row: Remember Me & Forgot Password -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-space-xs cursor-pointer select-none">
+<input class="w-[18px] h-[18px] rounded border-outline-variant text-secondary focus:ring-secondary/20 focus:ring-2 focus:ring-offset-0 transition-colors cursor-pointer" name="remember-me" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ghi nhớ đăng nhập</span>
+</label>
+<a class="font-title-sm text-title-sm text-primary hover:text-surface-tint hover:underline transition-colors focus:outline-none" href="#">
+              Quên mật khẩu?
+            </a>
+</div>
+<!-- Primary Submit Action -->
+<div class="pt-2">
+<button class="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded-lg flex items-center justify-center gap-2 shadow-sm hover:shadow active:scale-98 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="submit">
+<span>Đăng nhập</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Divider & Secondary Suggestion -->
+<div class="mt-space-lg pt-space-md border-t border-surface-container-high text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Chưa có tài khoản? 
+            <a class="font-title-sm text-title-sm text-primary hover:text-surface-tint font-semibold hover:underline ml-1 transition-colors" href="#">
+              Đăng ký ngay
+            </a>
+</p>
+</div>
+</div>
+<!-- Quick Academic Motivation Tagline -->
+<div class="text-center mt-space-md">
+<p class="font-label-sm text-label-sm text-outline flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="check_circle">check_circle</span>
+          Đồng bộ lịch trình, bài tập và phiên tập trung của bạn
+        </p>
+</div>
+</div>
+</main>
+<!-- Minimal Brand Footer (Shared Component Implementation) -->
+<footer class="w-full border-t border-surface-container-high bg-surface-container-lowest relative z-10">
+<div class="w-full py-space-md px-gutter-mobile md:px-margin max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center sm:text-left">
+        © 2025 Việc học của tôi. Không gian rèn luyện tri thức tập trung.
+      </p>
+<div class="flex items-center gap-space-md">
+<a class="font-body-sm text-body-sm text-outline hover:text-primary transition-colors duration-150" href="#">
+          Hướng dẫn sử dụng
+        </a>
+<a class="font-body-sm text-body-sm text-outline hover:text-primary transition-colors duration-150" href="#">
+          Điều khoản
+        </a>
+<a class="font-body-sm text-body-sm text-outline hover:text-primary transition-colors duration-150" href="#">
+          Hỗ trợ học tập
+        </a>
+</div>
+</div>
+</footer>
+<!-- Micro-interaction Script for Password Visibility Toggle -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('toggle-password');
+      const passwordInput = document.getElementById('password');
+      const passwordIcon = document.getElementById('password-icon');
+
+      if (toggleBtn && passwordInput && passwordIcon) {
+        toggleBtn.addEventListener('click', () => {
+          const isPassword = passwordInput.getAttribute('type') === 'password';
+          if (isPassword) {
+            passwordInput.setAttribute('type', 'text');
+            passwordIcon.textContent = 'visibility_off';
+            passwordIcon.setAttribute('data-icon', 'visibility_off');
+          } else {
+            passwordInput.setAttribute('type', 'password');
+            passwordIcon.textContent = 'visibility';
+            passwordIcon.setAttribute('data-icon', 'visibility');
+          }
+        });
+      }
+    });
+  </script>
+</body></html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html><html class="light" lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Việc học của tôi - Pomodoro</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#c3c0ff",
+            "secondary": "#006c49",
+            "surface-variant": "#dae2fd",
+            "outline": "#777587",
+            "on-tertiary-fixed": "#40000d",
+            "on-secondary": "#ffffff",
+            "surface-container": "#eaedff",
+            "tertiary": "#95002b",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#e2dfff",
+            "secondary-container": "#6cf8bb",
+            "on-primary-fixed-variant": "#3323cc",
+            "tertiary-fixed-dim": "#ffb2b7",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#464555",
+            "on-secondary-container": "#00714d",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "surface-tint": "#4d44e3",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary-fixed-variant": "#005236",
+            "on-primary-container": "#dad7ff",
+            "on-surface": "#131b2e",
+            "error": "#ba1a1a",
+            "primary": "#3525cd",
+            "error-container": "#ffdad6",
+            "surface": "#faf8ff",
+            "secondary-fixed": "#6ffbbe",
+            "outline-variant": "#c7c4d8",
+            "on-tertiary-container": "#ffd0d2",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#92002a",
+            "on-background": "#131b2e",
+            "surface-container-high": "#e2e7ff",
+            "secondary-fixed-dim": "#4edea3",
+            "tertiary-container": "#bf0f3c",
+            "inverse-surface": "#283044",
+            "inverse-on-surface": "#eef0ff",
+            "on-secondary-fixed": "#002113",
+            "background": "#faf8ff",
+            "on-primary-fixed": "#0f0069",
+            "surface-container-highest": "#dae2fd",
+            "tertiary-fixed": "#ffdadb",
+            "inverse-primary": "#c3c0ff",
+            "surface-bright": "#faf8ff",
+            "primary-container": "#4f46e5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "margin-desktop": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "space-md": "0.75rem",
+            "space-2xl": "2rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Be Vietnam Pro"],
+            "body-sm": ["Be Vietnam Pro"],
+            "headline-lg": ["Be Vietnam Pro"],
+            "headline-md": ["Be Vietnam Pro"],
+            "body-lg": ["Be Vietnam Pro"],
+            "overline": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "headline-xl": ["Be Vietnam Pro"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "overline": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-xl": ["30px", { "lineHeight": "38px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .progress-ring-circle {
+      transition: stroke-dashoffset 0.35s ease;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar (Shared Component JSON Source of Truth) -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant/40 dark:border-outline shadow-sm dark:shadow-none docked full-width top-0 h-16 sm:h-20 flex items-center sticky z-40">
+<div class="w-full px-4 sm:px-8 max-w-7xl mx-auto flex items-center justify-between">
+<!-- Brand Logo -->
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-2 text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary cursor-pointer active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary text-2xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">school</span>
+<span>Việc học của tôi</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-6 ml-4">
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors cursor-pointer active:scale-95 duration-150 py-1" href="#">
+            To do list
+          </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors cursor-pointer active:scale-95 duration-150 py-1" href="#">
+            Dự án
+          </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors cursor-pointer active:scale-95 duration-150 py-1" href="#">
+            Thời khóa biểu
+          </a>
+<!-- Active State: Pomodoro according to user intent -->
+<a class="text-primary dark:text-inverse-primary font-label-md text-label-md border-b-2 border-primary dark:border-inverse-primary pb-1 cursor-pointer active:scale-95 transition-transform duration-150" href="#">
+            Pomodoro
+          </a>
+</nav>
+</div>
+<!-- Trailing Cluster -->
+<div class="flex items-center gap-3">
+<!-- User Profile Pill -->
+<div class="flex items-center gap-3 py-1.5 px-2.5 rounded-full hover:bg-surface-container-low dark:hover:bg-inverse-surface/80 transition-colors cursor-pointer">
+<img alt="Nguyễn Văn An avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant/60" data-alt="Portrait photo of a young Vietnamese student named Nguyen Van An smiling warmly, soft daylight in a modern study studio, crisp clean background aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2ivaKm9M28VYWARHe4gvoNC4NHjF17FtZUazeZgBaCNj4YZa-H61vFcgvkjuWmRZe87QKqC4sEvhwbsKlt0WMKd-DP7xzz6KWEXG81TW-gBtsSyAEu_RrCm4dwLhb0BSHC4BiIKYZAg0sOwIimV407YKLFXdbaQa7FtG59E6_XJO_0VHK7Q4ri859J1euMTWJFgIfmpYJHd6-bQraGHL8Km-ZuFqeV5KexrqVGYpQYCC03Imu3oi3">
+<div class="hidden sm:flex flex-col text-left">
+<span class="font-label-md text-label-md text-on-surface leading-tight">Nguyễn Văn An</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">Học viên tích cực</span>
+</div>
+</div>
+<!-- Trailing Secondary Action -->
+<button class="flex items-center gap-1.5 py-1.5 px-3 rounded-lg border border-outline-variant/60 hover:bg-surface-container-low transition-colors text-on-surface-variant hover:text-on-surface font-label-md text-label-md cursor-pointer active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span class="hidden sm:inline">Đăng xuất</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Container Layout: Centered max-width content container -->
+<main class="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6">
+<!-- Top Headline & Session Badge Row -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div>
+<span class="text-primary font-overline text-overline uppercase tracking-wider block mb-1">PHƯƠNG PHÁP QUẢN LÝ THỜI GIAN</span>
+<h1 class="text-headline-xl font-headline-xl text-on-surface font-bold tracking-tight">Đồng hồ Pomodoro tập trung</h1>
+</div>
+<!-- Daily target pill indicator -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 shadow-sm text-on-surface self-start sm:self-auto">
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Hôm nay: <strong class="text-secondary font-label-md text-label-md" id="daily-sessions-count">2/4</strong> phiên hoàn thành</span>
+</div>
+</div>
+<!-- Active Task Ribbon Banner (Context linkage) -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-4 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Đang tập trung cho mục tiêu:</span>
+<h2 class="font-headline-md text-headline-md text-on-surface" id="current-task-name">Làm bài tập trắc nghiệm Toán giải tích chương 2</h2>
+</div>
+</div>
+<!-- Quick task dropdown selector -->
+<div class="relative inline-block self-end md:self-auto">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-outline-variant/60 text-on-surface hover:bg-surface-container-low text-label-md font-label-md transition-colors" id="task-select-toggle">
+<span class="material-symbols-outlined text-[16px] text-primary">swap_horiz</span>
+<span>Đổi công việc</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</button>
+<!-- Dropdown list -->
+<div class="hidden absolute right-0 mt-2 w-72 bg-surface-container-lowest border border-outline-variant/60 rounded-xl shadow-lg z-30 p-2 space-y-1" id="task-menu">
+<div class="px-2 py-1 text-[11px] font-overline uppercase text-on-surface-variant tracking-wider">Chọn công việc:</div>
+<button class="w-full text-left p-2 rounded-lg hover:bg-surface-container-low flex flex-col transition-colors" onclick="selectTask('Làm bài tập trắc nghiệm Toán giải tích chương 2', 'Toán học')">
+<span class="font-label-md text-label-md text-on-surface truncate">Làm bài tập trắc nghiệm Toán giải tích chương 2</span>
+<span class="font-body-sm text-body-sm text-primary text-[11px]">Toán học</span>
+</button>
+<button class="w-full text-left p-2 rounded-lg hover:bg-surface-container-low flex flex-col transition-colors" onclick="selectTask('Ôn tập 50 từ vựng tiếng Anh bài Unit 8', 'Tiếng Anh')">
+<span class="font-label-md text-label-md text-on-surface truncate">Ôn tập 50 từ vựng tiếng Anh bài Unit 8</span>
+<span class="font-body-sm text-body-sm text-tertiary text-[11px]">Tiếng Anh</span>
+</button>
+<button class="w-full text-left p-2 rounded-lg hover:bg-surface-container-low flex flex-col transition-colors" onclick="selectTask('Hoàn thiện báo cáo thí nghiệm Hóa học hữu cơ', 'Hóa học')">
+<span class="font-label-md text-label-md text-on-surface truncate">Hoàn thiện báo cáo thí nghiệm Hóa học hữu cơ</span>
+<span class="font-body-sm text-body-sm text-error text-[11px]">Hóa học</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Pomodoro Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl p-6 sm:p-10 shadow-sm text-center relative overflow-hidden">
+<!-- Top Priority/Status Accent stripe -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-primary-container transition-colors duration-300" id="status-bar"></div>
+<!-- Mode Switcher Tabs (Frictionless Pill Segment) -->
+<div class="inline-flex p-1 bg-[#F1F5F9] rounded-full mx-auto mb-8 border border-outline-variant/30">
+<button class="px-5 py-2 rounded-full font-label-md text-label-md transition-all duration-200 bg-surface-container-lowest text-on-surface shadow-sm" id="tab-focus" onclick="setMode('focus')">
+          Thời gian tập trung (25:00)
+        </button>
+<button class="px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200" id="tab-break" onclick="setMode('break')">
+          Thời gian nghỉ (05:00)
+        </button>
+</div>
+<!-- State Indicator Tag -->
+<div class="mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-sm text-label-sm bg-primary-fixed text-primary" id="mode-badge">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span id="mode-label">Đang trong phiên tập trung</span>
+</span>
+</div>
+<!-- Circular Progress & Timer Display -->
+<div class="relative w-64 h-64 sm:w-72 sm:h-72 mx-auto my-4 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewBox="0 0 240 240">
+<!-- Background Ring Track -->
+<circle cx="120" cy="120" fill="transparent" r="102" stroke="#EEF2F6" stroke-width="12"></circle>
+<!-- Animated Progress Ring -->
+<circle class="progress-ring-circle" cx="120" cy="120" fill="transparent" id="progress-circle" r="102" stroke="url(#timerGradient)" stroke-dasharray="640.88" stroke-dashoffset="0" stroke-linecap="round" stroke-width="12"></circle>
+<defs>
+<linearGradient id="timerGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#4F46E5"></stop>
+<stop offset="100%" stop-color="#10B981"></stop>
+</linearGradient>
+<linearGradient id="breakGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#006C49"></stop>
+<stop offset="100%" stop-color="#6CF8BB"></stop>
+</linearGradient>
+</defs>
+</svg>
+<!-- Inner Digital Readout -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-xl text-5xl sm:text-6xl font-bold tracking-tight text-on-surface select-none tabular-nums" id="timer-display">25:00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1" id="timer-subtext">Giữ sự tập trung cao độ</span>
+</div>
+</div>
+<!-- Main Interaction Controls -->
+<div class="flex items-center justify-center gap-3 sm:gap-4 mt-6">
+<!-- Start Button -->
+<button class="flex items-center gap-2 px-8 py-3.5 rounded-xl bg-primary-container hover:bg-[#4338CA] text-on-primary font-headline-md text-headline-md shadow-md hover:shadow-lg transition-all duration-150 active:scale-95 cursor-pointer" id="btn-start" onclick="toggleTimer()">
+<span class="material-symbols-outlined text-[24px]" id="btn-start-icon" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span id="btn-start-text">Bắt đầu</span>
+</button>
+<!-- Pause Button -->
+<button class="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/60 hover:bg-surface-container-low text-on-surface font-label-md text-label-md shadow-sm transition-all duration-150 active:scale-95 cursor-pointer disabled:opacity-50" disabled="" id="btn-pause" onclick="pauseTimer()">
+<span class="material-symbols-outlined text-[20px]">pause</span>
+<span>Tạm dừng</span>
+</button>
+<!-- Reset Button -->
+<button class="p-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/60 hover:bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-all duration-150 active:scale-95 cursor-pointer" id="btn-reset" onclick="resetTimer()" title="Đặt lại về ban đầu">
+<span class="material-symbols-outlined text-[20px]">restart_alt</span>
+</button>
+</div>
+<!-- Tomato / Session Progress Indicators -->
+<div class="mt-8 pt-6 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tiến độ đợt học:</span>
+<div class="flex items-center gap-1.5" id="pomodoro-slots">
+<!-- Slot 1: Done -->
+<div class="w-8 h-8 rounded-full bg-[#ECFDF5] border border-secondary/30 flex items-center justify-center text-secondary" title="Phiên 1: Đã hoàn thành">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<!-- Slot 2: Done -->
+<div class="w-8 h-8 rounded-full bg-[#ECFDF5] border border-secondary/30 flex items-center justify-center text-secondary" title="Phiên 2: Đã hoàn thành">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<!-- Slot 3: Current -->
+<div class="w-8 h-8 rounded-full bg-primary-fixed border border-primary/40 flex items-center justify-center text-primary animate-pulse" title="Phiên 3: Đang thực hiện">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+</div>
+<!-- Slot 4: Next -->
+<div class="w-8 h-8 rounded-full bg-[#F1F5F9] border border-outline-variant/40 flex items-center justify-center text-outline" title="Phiên 4: Chưa bắt đầu">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span>Nghỉ dài (15 phút) sau 4 phiên hoàn tất</span>
+</div>
+</div>
+</div>
+<!-- Linear Progress Bar Summary (Aligned to screenshot) -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-5 shadow-sm space-y-2">
+<div class="flex items-center justify-between text-body-md font-body-md">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+<span>Tiến độ hoàn thành nhiệm vụ</span>
+</div>
+<span class="text-primary font-headline-md text-headline-md font-bold" id="progress-percent-label">60%</span>
+</div>
+<!-- Track and Gradient Fill -->
+<div class="w-full h-2.5 bg-[#F1F5F9] rounded-full overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-primary-container via-[#006c49] to-secondary-container transition-all duration-500" id="linear-fill" style="width: 60%"></div>
+</div>
+</div>
+<!-- Suggested Study Tip Banner (Matches reference screenshot styling) -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-4 flex items-center gap-3 shadow-sm text-on-surface">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<p class="font-body-md text-body-md">
+<strong class="font-label-md text-label-md text-on-surface">Mẹo tập trung:</strong> Chia nhỏ các bài tập dài thành các phiên tập trung 25 phút (Pomodoro) giúp tăng tốc độ hoàn thành lên đến 40%.
+      </p>
+</div>
+</main>
+<!-- Interactive Logic -->
+<script>
+    const FOCUS_SECONDS = 25 * 60;
+    const BREAK_SECONDS = 5 * 60;
+
+    let currentMode = 'focus'; // 'focus' or 'break'
+    let totalSeconds = FOCUS_SECONDS;
+    let remainingSeconds = FOCUS_SECONDS;
+    let timerInterval = null;
+    let isRunning = false;
+    let completedSessions = 2;
+
+    const timerDisplay = document.getElementById('timer-display');
+    const timerSubtext = document.getElementById('timer-subtext');
+    const btnStart = document.getElementById('btn-start');
+    const btnStartText = document.getElementById('btn-start-text');
+    const btnStartIcon = document.getElementById('btn-start-icon');
+    const btnPause = document.getElementById('btn-pause');
+    const progressCircle = document.getElementById('progress-circle');
+    const modeBadge = document.getElementById('mode-badge');
+    const modeLabel = document.getElementById('mode-label');
+    const statusBar = document.getElementById('status-bar');
+    const tabFocus = document.getElementById('tab-focus');
+    const tabBreak = document.getElementById('tab-break');
+    const dailySessionsCount = document.getElementById('daily-sessions-count');
+
+    const circumference = 2 * Math.PI * 102; // r=102 -> ~640.88
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+
+    function updateProgressRing() {
+      const offset = circumference - (remainingSeconds / totalSeconds) * circumference;
+      progressCircle.style.strokeDashoffset = offset;
+    }
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60).toString().padStart(2, '0');
+      const s = (secs % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    function renderDisplay() {
+      timerDisplay.textContent = formatTime(remainingSeconds);
+      updateProgressRing();
+    }
+
+    function setMode(mode) {
+      if (isRunning) pauseTimer();
+      currentMode = mode;
+
+      if (mode === 'focus') {
+        totalSeconds = FOCUS_SECONDS;
+        remainingSeconds = FOCUS_SECONDS;
+        tabFocus.className = "px-5 py-2 rounded-full font-label-md text-label-md transition-all duration-200 bg-surface-container-lowest text-on-surface shadow-sm";
+        tabBreak.className = "px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200";
+        modeBadge.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-sm text-label-sm bg-primary-fixed text-primary";
+        modeLabel.textContent = "Đang trong phiên tập trung";
+        statusBar.className = "absolute top-0 left-0 right-0 h-1.5 bg-primary-container transition-colors duration-300";
+        timerSubtext.textContent = "Giữ sự tập trung cao độ";
+        progressCircle.setAttribute('stroke', 'url(#timerGradient)');
+      } else {
+        totalSeconds = BREAK_SECONDS;
+        remainingSeconds = BREAK_SECONDS;
+        tabBreak.className = "px-5 py-2 rounded-full font-label-md text-label-md transition-all duration-200 bg-surface-container-lowest text-on-surface shadow-sm";
+        tabFocus.className = "px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200";
+        modeBadge.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container";
+        modeLabel.textContent = "Thời gian nghỉ ngơi phục hồi";
+        statusBar.className = "absolute top-0 left-0 right-0 h-1.5 bg-secondary transition-colors duration-300";
+        timerSubtext.textContent = "Đứng dậy vươn vai và thư giãn mắt";
+        progressCircle.setAttribute('stroke', 'url(#breakGradient)');
+      }
+
+      btnStartText.textContent = "Bắt đầu";
+      btnStartIcon.textContent = "play_arrow";
+      btnPause.disabled = true;
+      renderDisplay();
+    }
+
+    function toggleTimer() {
+      if (!isRunning) {
+        // Start running
+        isRunning = true;
+        btnStartText.textContent = "Đang chạy";
+        btnStartIcon.textContent = "timer";
+        btnPause.disabled = false;
+
+        timerInterval = setInterval(() => {
+          if (remainingSeconds > 0) {
+            remainingSeconds--;
+            renderDisplay();
+          } else {
+            // Completed
+            clearInterval(timerInterval);
+            isRunning = false;
+            if (currentMode === 'focus') {
+              completedSessions++;
+              dailySessionsCount.textContent = `${completedSessions}/4`;
+              alert("Tuyệt vời! Bạn đã hoàn thành một phiên Pomodoro!");
+              setMode('break');
+            } else {
+              alert("Hết giờ nghỉ ngơi! Sẵn sàng cho phiên tập trung mới?");
+              setMode('focus');
+            }
+          }
+        }, 1000);
+      }
+    }
+
+    function pauseTimer() {
+      if (isRunning) {
+        clearInterval(timerInterval);
+        isRunning = false;
+        btnStartText.textContent = "Tiếp tục";
+        btnStartIcon.textContent = "play_arrow";
+        btnPause.disabled = true;
+      }
+    }
+
+    function resetTimer() {
+      pauseTimer();
+      setMode(currentMode);
+    }
+
+    // Task selection dropdown logic
+    const taskBtn = document.getElementById('task-select-toggle');
+    const taskMenu = document.getElementById('task-menu');
+    const currentTaskTitle = document.getElementById('current-task-name');
+
+    taskBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      taskMenu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      taskMenu.classList.add('hidden');
+    });
+
+    function selectTask(name, subject) {
+      currentTaskTitle.textContent = name;
+      taskMenu.classList.add('hidden');
+    }
+
+    // Initialize display on page load
+    renderDisplay();
+  </script>
+</body></html>

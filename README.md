@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Supabase setup
+
+1. In the Supabase Dashboard, run [`supabase/schema.sql`](./supabase/schema.sql) in the SQL Editor. If you ran the schema earlier, run it again so the authenticated Data API grants are applied.
+2. Copy `.env.example` to `.env.local` and fill in the project URL and **publishable key** from the Supabase Project Connect dialog. Never put a `service_role` or secret key in a `NEXT_PUBLIC_` variable.
+3. In Supabase Authentication URL Configuration, set the Site URL to `http://localhost:3000` and add `http://localhost:3000/auth/callback` to the allowed redirect URLs.
+4. Start the app with `npm run dev`, then open `http://localhost:3000/login`. Register with an email and password. If email confirmation is enabled, confirm your email before signing in.
+
+The login page supports email/password sign-in, sign-up, and password reset. Supabase Auth stores accounts; the SQL schema creates each profile automatically and applies row-level security to application data.
+
 ## Getting Started
 
 First, run the development server:

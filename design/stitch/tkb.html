@@ -1,0 +1,552 @@
+<!DOCTYPE html><html class="light" lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Thời khóa biểu - Việc học của tôi</title>
+<!-- Google Font: Be Vietnam Pro -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#c3c0ff",
+            "secondary": "#006c49",
+            "surface-variant": "#dae2fd",
+            "outline": "#777587",
+            "on-tertiary-fixed": "#40000d",
+            "on-secondary": "#ffffff",
+            "surface-container": "#eaedff",
+            "tertiary": "#95002b",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#e2dfff",
+            "secondary-container": "#6cf8bb",
+            "on-primary-fixed-variant": "#3323cc",
+            "tertiary-fixed-dim": "#ffb2b7",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#464555",
+            "on-secondary-container": "#00714d",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "surface-tint": "#4d44e3",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary-fixed-variant": "#005236",
+            "on-primary-container": "#dad7ff",
+            "on-surface": "#131b2e",
+            "error": "#ba1a1a",
+            "primary": "#3525cd",
+            "error-container": "#ffdad6",
+            "surface": "#faf8ff",
+            "secondary-fixed": "#6ffbbe",
+            "outline-variant": "#c7c4d8",
+            "on-tertiary-container": "#ffd0d2",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#92002a",
+            "on-background": "#131b2e",
+            "surface-container-high": "#e2e7ff",
+            "secondary-fixed-dim": "#4edea3",
+            "tertiary-container": "#bf0f3c",
+            "inverse-surface": "#283044",
+            "inverse-on-surface": "#eef0ff",
+            "on-secondary-fixed": "#002113",
+            "background": "#faf8ff",
+            "on-primary-fixed": "#0f0069",
+            "surface-container-highest": "#dae2fd",
+            "tertiary-fixed": "#ffdadb",
+            "inverse-primary": "#c3c0ff",
+            "surface-bright": "#faf8ff",
+            "primary-container": "#4f46e5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "margin-desktop": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "space-md": "0.75rem",
+            "space-2xl": "2rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Be Vietnam Pro"],
+            "body-sm": ["Be Vietnam Pro"],
+            "headline-lg": ["Be Vietnam Pro"],
+            "headline-md": ["Be Vietnam Pro"],
+            "body-lg": ["Be Vietnam Pro"],
+            "overline": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "headline-xl": ["Be Vietnam Pro"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "overline": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-xl": ["30px", { "lineHeight": "38px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: #faf8ff;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .task-card-accent-purple {
+      border-left: 4px solid #4f46e5;
+    }
+    .task-card-accent-emerald {
+      border-left: 4px solid #059669;
+    }
+    .task-card-accent-rose {
+      border-left: 4px solid #e11d48;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col antialiased">
+<!-- TopNavBar (Shared Component Anchor) -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none sticky top-0 z-40">
+<div class="w-full px-4 sm:px-8 max-w-7xl mx-auto flex items-center justify-between h-16 sm:h-20">
+<!-- Brand Logo -->
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-2 text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary cursor-pointer active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="tracking-tight text-primary font-bold">Việc học của tôi</span>
+</a>
+<!-- Desktop Navigation Items -->
+<nav class="hidden md:flex items-center gap-6">
+<!-- Inactive: To do list -->
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors cursor-pointer active:scale-95 transition-transform duration-150" href="#">
+            To do list
+          </a>
+<!-- Inactive: Dự án -->
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors cursor-pointer active:scale-95 transition-transform duration-150" href="#">
+            Dự án
+          </a>
+<!-- ACTIVE: Thời khóa biểu -->
+<a class="text-primary dark:text-inverse-primary font-label-md text-label-md border-b-2 border-primary dark:border-inverse-primary pb-1 cursor-pointer" href="#">
+            Thời khóa biểu
+          </a>
+<!-- Inactive: Pomodoro -->
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors cursor-pointer active:scale-95 transition-transform duration-150" href="#">
+            Pomodoro
+          </a>
+</nav>
+</div>
+<!-- Trailing Cluster: Profile & Trailing Secondary Action -->
+<div class="flex items-center gap-3 sm:gap-4">
+<div class="flex items-center gap-2.5 pl-2 py-1 pr-3 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors">
+<img alt="Nguyễn Văn An avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="Close up portrait photograph of Nguyen Van An, a confident Vietnamese college student with a friendly warm smile, natural ambient library lighting, clean soft aesthetic, crisp white shirt against modern campus backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATUAi8wZUlaQRLIkF0bCoMctqYB8Eee6t5PhCEMrvMZXVLMbwLQCKD4xWotLKgO7va8Gv2OcHNfaBuDZmC05GvHxJlieFQ5SvzCidPaS6VpIjNBhkIUjE1PzoYM6AmZr_AmCZxFipbThwbZiL0-xrl2N11oBJZXVA70LOHy-hr1JqjOokX4GbUEE8wdF8LPS3jqisxIWi1M8mJl-JVjy3abDEXQ4p6z3wupIpx8_CkP7wEgbzSoymr">
+<div class="hidden sm:flex flex-col text-left">
+<span class="text-label-md font-label-md text-on-surface leading-tight">Nguyễn Văn An</span>
+<span class="text-[11px] text-on-surface-variant font-medium leading-tight">Học viên tích cực</span>
+</div>
+</div>
+<!-- Trailing Secondary Action: Đăng xuất -->
+<button class="flex items-center gap-1.5 px-3 py-1.5 border border-outline-variant hover:bg-surface-container-low text-on-surface text-label-md font-label-md rounded-lg cursor-pointer active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span class="hidden sm:inline">Đăng xuất</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-8 py-6 sm:py-8 space-y-6">
+<!-- Page Header Section with Status Chips & View Mode Toggle -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 border-b border-outline-variant/50">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-overline font-overline text-primary tracking-wider uppercase">BẢNG CÔNG VIỆC HỌC TẬP</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-overline font-overline text-secondary font-bold uppercase tracking-wider">HỌC KỲ II - 2024</span>
+</div>
+<h1 class="text-headline-xl font-headline-xl text-on-surface">Thời khóa biểu của tôi</h1>
+</div>
+<!-- Quick Controls / Demo Switcher for Preview -->
+<div class="flex items-center gap-3">
+<div class="bg-surface-container p-1 rounded-full flex items-center text-label-sm font-label-sm border border-outline-variant/60">
+<button class="px-3 py-1 rounded-full bg-surface-container-lowest text-primary shadow-sm font-semibold transition-all" id="toggleHasImageBtn" onclick="switchState(true)">
+            Có ảnh TKB
+          </button>
+<button class="px-3 py-1 rounded-full text-on-surface-variant hover:text-on-surface transition-all" id="toggleEmptyBtn" onclick="switchState(false)">
+            Trạng thái trống
+          </button>
+</div>
+<button class="inline-flex items-center gap-2 px-4 py-2 bg-primary-container hover:bg-primary text-on-primary rounded-xl text-label-md font-label-md shadow-sm transition-all duration-150 active:scale-95 cursor-pointer" onclick="document.getElementById('fileUploadInput').click()">
+<span class="material-symbols-outlined text-[18px]">add_photo_alternate</span>
+<span>+ Chọn ảnh thời khóa biểu</span>
+</button>
+<input accept="image/*" class="hidden" id="fileUploadInput" onchange="handleFileSelect(event)" type="file">
+</div>
+</div>
+<!-- Active State Alert / Banner -->
+<div class="bg-surface-container-lowest border border-outline-variant/70 rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-sm">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-2xl">event_available</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-headline-md font-headline-md text-on-surface">Tuần học 12 (15/04 - 21/04)</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container text-label-sm font-label-sm">Đang diễn ra</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Tiết học tiếp theo: <strong class="text-on-surface">Hóa học hữu cơ</strong> lúc 13:30 tại Phòng B204 (Tòa nhà B).</p>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto justify-end">
+<button class="flex-1 md:flex-none inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-low text-on-surface text-label-md font-label-md rounded-xl transition-colors" onclick="zoomModal(true)">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+<span>Xem ảnh lớn</span>
+</button>
+<button class="flex-1 md:flex-none inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-low text-on-surface text-label-md font-label-md rounded-xl transition-colors" onclick="downloadImage()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Tải xuống</span>
+</button>
+</div>
+</div>
+<!-- Main Workspace Bento Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Primary Schedule Canvas / Visual Viewer (8 Columns) -->
+<div class="lg:col-span-8 space-y-4">
+<!-- Schedule Image Container (State: Has Image) -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl shadow-sm overflow-hidden transition-all duration-300" id="scheduleImageCard">
+<!-- Image Control Ribbon -->
+<div class="px-5 py-3 border-b border-outline-variant/60 flex items-center justify-between bg-surface-container-low/40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="text-label-md font-label-md text-on-surface">Ảnh thời khóa biểu: <span class="text-primary font-bold">TKB_ChinhThuc_HK2.png</span></span>
+<span class="text-[11px] px-2 py-0.5 rounded bg-outline-variant/40 text-on-surface-variant font-medium">1920 x 1080</span>
+</div>
+<!-- Action cluster for Image -->
+<div class="flex items-center gap-1.5">
+<button class="flex items-center gap-1 px-2.5 py-1 text-label-sm font-label-sm rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/80 transition-colors" onclick="document.getElementById('fileUploadInput').click()" title="Thay đổi ảnh khác">
+<span class="material-symbols-outlined text-[16px]">cached</span>
+<span class="hidden sm:inline">Thay đổi ảnh</span>
+</button>
+<button class="flex items-center gap-1 px-2.5 py-1 text-label-sm font-label-sm rounded-lg hover:bg-error-container/40 text-error border border-error/20 transition-colors" onclick="deleteScheduleImage()" title="Xóa ảnh thời khóa biểu">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span class="hidden sm:inline">Xóa ảnh</span>
+</button>
+</div>
+</div>
+<!-- The Visual Schedule Display -->
+<div class="p-3 sm:p-5 bg-surface relative group">
+<div class="relative overflow-hidden rounded-xl border border-outline-variant/60 bg-white shadow-inner">
+<img alt="Thời khóa biểu tuần sinh viên" class="w-full h-auto object-cover max-h-[560px] cursor-pointer transition-transform duration-200 group-hover:scale-[1.01]" data-alt="A clean, modern graphic university weekly class schedule timetable in high resolution light mode aesthetic with Be Vietnam Pro typography. Columns Monday through Saturday are crisp white card blocks featuring courses: Organic Chemistry with red tag, Calculus Math with indigo tag, Marxist-Leninist Philosophy with emerald tag, and English Unit 8 with purple tag. Sleek lines, pastel tints, high clarity." id="mainScheduleImg" onclick="zoomModal(true)" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp801eK3opSAV_m6dVKyYPyzTxTJzlmK3VQOny-gqRO0VTL60hl78yJDx4sfGWxI9BOclj_BDUyrQJkcSpRR0D1K0K7tANBsW5ogwAERosZ-XhdxaNbzfNAOdhJZp62EUvh6DztXmlOrLXBf8_pLIlVrR1rKjgF-Es0U_9tXQTiFyPAcuXV-mOdsRFw5TXjmlwcVLtbcDMQRkzk1fdfAYg-APmeArO73fFqHSCdC4lAXsKlPLklofg">
+<!-- Overlay floating button on hover -->
+<div class="absolute inset-0 bg-inverse-surface/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none flex items-center justify-center">
+<span class="bg-surface-container-lowest/95 backdrop-blur text-primary text-label-md font-label-md px-4 py-2 rounded-full shadow-lg border border-outline-variant flex items-center gap-2 pointer-events-auto cursor-pointer" onclick="zoomModal(true)">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+                  Nhấp để phóng to toàn màn hình
+                </span>
+</div>
+</div>
+</div>
+<!-- Bottom Micro-footer within Card -->
+<div class="px-5 py-2.5 bg-surface-container-low/30 border-t border-outline-variant/50 flex flex-wrap items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-[12px]">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span>
+              Cập nhật lần cuối: Hôm nay, 08:30 sáng
+            </span>
+<div class="flex items-center gap-3 text-[12px]">
+<span class="cursor-pointer hover:underline text-primary" onclick="alert('Đã đồng bộ hóa với Google Calendar!')">Đồng bộ Google Calendar</span>
+<span>•</span>
+<span class="cursor-pointer hover:underline text-on-surface" onclick="window.print()">In thời khóa biểu</span>
+</div>
+</div>
+</div>
+<!-- Empty State Container (Hidden by default, toggled via switcher) -->
+<div class="hidden bg-surface-container-lowest border-2 border-dashed border-outline-variant rounded-2xl p-10 sm:p-14 text-center shadow-sm" id="scheduleEmptyCard">
+<div class="w-20 h-20 mx-auto rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 0;">cloud_upload</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Bạn chưa tải thời khóa biểu</h3>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md mx-auto mb-6">
+            Tải lên hình ảnh thời khóa biểu học kỳ của trường để tiện theo dõi phòng học, ca học và giảng viên mỗi ngày ngay trên trang chính.
+          </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-primary-container hover:bg-primary text-on-primary rounded-xl text-label-md font-label-md shadow-sm transition-all duration-150 active:scale-95 cursor-pointer" onclick="document.getElementById('fileUploadInput').click()">
+<span class="material-symbols-outlined text-[20px]">add_photo_alternate</span>
+<span>+ Chọn ảnh thời khóa biểu</span>
+</button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-low text-on-surface text-label-md font-label-md rounded-xl transition-colors" onclick="restoreDefaultImage()">
+<span>Sử dụng ảnh mẫu</span>
+</button>
+</div>
+<p class="text-overline font-overline text-outline text-[11px] mt-4 uppercase">Hỗ trợ định dạng: PNG, JPG, JPEG, WEBP (Tối đa 15MB)</p>
+</div>
+<!-- Quick Subject Tag Directory below Timetable -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl p-5 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<h4 class="text-label-md font-label-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">bookmarks</span>
+              Các môn học trong tuần này (4 môn)
+            </h4>
+<span class="text-label-sm font-label-sm text-primary cursor-pointer hover:underline">Chi tiết môn học →</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+<!-- Math Card -->
+<div class="p-3 rounded-xl bg-surface border border-outline-variant/60 task-card-accent-purple flex items-center justify-between">
+<div>
+<span class="text-label-md font-label-md text-on-surface block">Toán giải tích</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Thứ 2, Thứ 4 • Tiết 1-3</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-[#EEF2FF] text-primary">3 Tín chỉ</span>
+</div>
+<!-- Chemistry Card -->
+<div class="p-3 rounded-xl bg-surface border border-outline-variant/60 task-card-accent-rose flex items-center justify-between">
+<div>
+<span class="text-label-md font-label-md text-on-surface block">Hóa học hữu cơ</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Thứ 3, Thứ 6 • Tiết 6-8</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-error-container/40 text-error">4 Tín chỉ</span>
+</div>
+<!-- Philosophy Card -->
+<div class="p-3 rounded-xl bg-surface border border-outline-variant/60 task-card-accent-emerald flex items-center justify-between">
+<div>
+<span class="text-label-md font-label-md text-on-surface block">Triết học Mác - Lênin</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Thứ 5 • Tiết 4-6</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-secondary-container/40 text-on-secondary-container">2 Tín chỉ</span>
+</div>
+<!-- English Card -->
+<div class="p-3 rounded-xl bg-surface border border-outline-variant/60 task-card-accent-purple flex items-center justify-between">
+<div>
+<span class="text-label-md font-label-md text-on-surface block">Tiếng Anh thương mại</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Thứ 7 • Tiết 1-4</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-surface">3 Tín chỉ</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar / Room & Lecturer Agenda (4 Columns) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Today Schedule Card: "Phòng học & Giảng viên hôm nay" -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl p-5 shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]" style="font-variation-settings: 'FILL' 1;">meeting_room</span>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Hôm nay học gì?</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Thứ 3, 16 tháng 04</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container text-label-sm font-label-sm font-bold">2 ca học</span>
+</div>
+<!-- Schedule list items -->
+<div class="divide-y divide-outline-variant/40 mt-3">
+<!-- Item 1 (Passed / In-progress) -->
+<div class="py-3.5 space-y-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-label-sm text-[11px]">07:30 - 09:50</span>
+<span class="text-[12px] text-secondary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">check</span> Đã hoàn thành
+                </span>
+</div>
+<div>
+<h4 class="text-body-lg font-body-lg font-bold text-on-surface">Toán giải tích (Lý thuyết)</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">location_on</span>
+                  Phòng: <strong class="text-on-surface">A102 - Giảng đường A</strong>
+</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">person</span>
+                  Giảng viên: <span class="text-on-surface font-medium">TS. Trần Hữu Hoàng</span>
+</p>
+</div>
+</div>
+<!-- Item 2 (Next upcoming class) -->
+<div class="py-3.5 space-y-2 bg-surface-container-low/40 -mx-5 px-5 rounded-lg border-l-4 border-primary">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-md bg-primary-container text-on-primary font-label-sm text-[11px]">13:30 - 16:00</span>
+<span class="text-[12px] text-primary flex items-center gap-1 font-semibold animate-pulse">
+<span class="material-symbols-outlined text-[14px]">notifications_active</span> Sắp diễn ra
+                </span>
+</div>
+<div>
+<h4 class="text-body-lg font-body-lg font-bold text-primary">Thí nghiệm Hóa học hữu cơ</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">location_on</span>
+                  Phòng: <strong class="text-on-surface">Lab B204 (Tòa Công nghệ Hóa)</strong>
+</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">person</span>
+                  Giảng viên: <span class="text-on-surface font-medium">PGS. TS. Lê Thùy Dung</span>
+</p>
+<div class="mt-2 p-2 rounded-lg bg-white border border-outline-variant/60 text-[12px] text-on-surface-variant">
+<strong class="text-error">Lưu ý:</strong> Mang theo áo blouse trắng, găng tay cao su và bản thảo báo cáo thí nghiệm trước khi vào phòng.
+                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Study Note / Tip Card (Style Guidance Match) -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-2xl p-4 sm:p-5 shadow-sm flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+</div>
+<div>
+<h5 class="text-label-md font-label-md text-on-surface">Mẹo quản lý thời khóa biểu:</h5>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              Bạn có thể chụp ảnh màn hình thời khóa biểu trên cổng thông tin trường (Portal sinh viên) và tải lên tại đây để tra cứu phòng học chỉ trong 1 chạm.
+            </p>
+</div>
+</div>
+<!-- Direct Link to Tasks -->
+<div class="bg-gradient-to-br from-surface-container-low to-surface-container border border-outline-variant/70 rounded-2xl p-5 shadow-sm text-center">
+<div class="w-12 h-12 mx-auto rounded-full bg-primary text-on-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-2xl">checklist</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-surface">Bạn có 2 bài tập cần nộp</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 mb-4">
+            Hoàn thiện báo cáo thí nghiệm Hóa học và 50 từ vựng tiếng Anh trước thời hạn.
+          </p>
+<a class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-surface-container-lowest hover:bg-white text-primary border border-outline-variant rounded-xl font-label-md text-label-md shadow-sm transition-colors" href="#">
+<span>Mở bảng To do list</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal: Fullscreen Schedule Zoom Viewer -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/80 backdrop-blur-sm hidden items-center justify-center p-4" id="imageZoomModal">
+<div class="relative bg-surface-container-lowest rounded-2xl max-w-5xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden border border-outline-variant">
+<!-- Modal Header -->
+<div class="px-5 py-3 border-b border-outline-variant flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<span class="font-headline-md text-headline-md text-on-surface">Xem toàn màn hình: Thời khóa biểu học kỳ II</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-on-surface rounded-lg hover:bg-surface-container transition-colors" onclick="downloadImage()" title="Tải xuống">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error rounded-lg hover:bg-error-container/40 transition-colors" onclick="zoomModal(false)" title="Đóng">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<!-- Modal Body (Image) -->
+<div class="p-4 overflow-auto flex-1 flex items-center justify-center bg-[#f1f5f9]">
+<img alt="Ảnh phóng to thời khóa biểu" class="max-w-full max-h-[75vh] object-contain rounded-lg shadow-md border border-outline-variant" data-alt="Expanded crisp high definition view of Vietnamese university student weekly schedule timetable with Be Vietnam Pro clean font, pastel subject tags for Calculus, Chemistry, Philosophy, and English" id="zoomImgDisplay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS-A6pPa2XkJd4fFETPLmEdlNnj3aHoL6oXUm0VsPAIGszLJ9XV09E7grh3yMZ7MjskJlxFLB8nV3htk7DyOYhwQhgQPBavdITG6JHNrJtB_696QM5qY3hcr7VEre84zcfOpSmJP0yfEHB1H5KYx3C4CjNVAnCOeAFT--8OCqQVz0qc5vMddpjw_iicip9cUwyLjUODriqG_DJP4I1-JOaSe4AffF-HLHFbuQZWYVsmW4sKHYx7QUc">
+</div>
+<!-- Modal Footer -->
+<div class="px-5 py-2.5 border-t border-outline-variant flex justify-between items-center text-body-sm font-body-sm text-on-surface-variant">
+<span>Gợi ý: Bạn có thể nhấn phím <kbd class="px-1.5 py-0.5 rounded bg-surface-container border text-[11px] font-mono">ESC</kbd> để đóng cửa sổ</span>
+<button class="px-4 py-1.5 bg-primary text-on-primary rounded-xl font-label-md text-label-md" onclick="zoomModal(false)">Đóng</button>
+</div>
+</div>
+</div>
+<!-- Interactive Script for Upload, Switch, Delete, and Modal Operations -->
+<script>
+    // State handler: Switch between Has-Image and Empty View
+    function switchState(hasImage) {
+      const scheduleImageCard = document.getElementById('scheduleImageCard');
+      const scheduleEmptyCard = document.getElementById('scheduleEmptyCard');
+      const toggleHasImageBtn = document.getElementById('toggleHasImageBtn');
+      const toggleEmptyBtn = document.getElementById('toggleEmptyBtn');
+
+      if (hasImage) {
+        scheduleImageCard.classList.remove('hidden');
+        scheduleEmptyCard.classList.add('hidden');
+        
+        // Button styles
+        toggleHasImageBtn.className = "px-3 py-1 rounded-full bg-surface-container-lowest text-primary shadow-sm font-semibold transition-all";
+        toggleEmptyBtn.className = "px-3 py-1 rounded-full text-on-surface-variant hover:text-on-surface transition-all";
+      } else {
+        scheduleImageCard.classList.add('hidden');
+        scheduleEmptyCard.classList.remove('hidden');
+
+        // Button styles
+        toggleEmptyBtn.className = "px-3 py-1 rounded-full bg-surface-container-lowest text-primary shadow-sm font-semibold transition-all";
+        toggleHasImageBtn.className = "px-3 py-1 rounded-full text-on-surface-variant hover:text-on-surface transition-all";
+      }
+    }
+
+    // Modal Zoom Control
+    function zoomModal(show) {
+      const modal = document.getElementById('imageZoomModal');
+      if (show) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    // Keyboard support: Close modal with Escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        zoomModal(false);
+      }
+    });
+
+    // Delete schedule action confirmation
+    function deleteScheduleImage() {
+      if (confirm('Bạn có chắc chắn muốn xóa ảnh thời khóa biểu này không?')) {
+        switchState(false);
+      }
+    }
+
+    // Mock restore image
+    function restoreDefaultImage() {
+      switchState(true);
+    }
+
+    // Handle real file upload selection
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const mainImg = document.getElementById('mainScheduleImg');
+          const zoomImg = document.getElementById('zoomImgDisplay');
+          mainImg.src = e.target.result;
+          zoomImg.src = e.target.result;
+          switchState(true);
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Mock download action
+    function downloadImage() {
+      const link = document.createElement('a');
+      link.download = 'ThoiKhoaBieu_HocKyII.png';
+      link.href = document.getElementById('mainScheduleImg').src;
+      link.click();
+    }
+  </script>
+</body></html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html><html class="light" lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dự án - Việc học của tôi</title>
+<!-- Google Font: Be Vietnam Pro -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#c3c0ff",
+            "secondary": "#006c49",
+            "surface-variant": "#dae2fd",
+            "outline": "#777587",
+            "on-tertiary-fixed": "#40000d",
+            "on-secondary": "#ffffff",
+            "surface-container": "#eaedff",
+            "tertiary": "#95002b",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#e2dfff",
+            "secondary-container": "#6cf8bb",
+            "on-primary-fixed-variant": "#3323cc",
+            "tertiary-fixed-dim": "#ffb2b7",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#464555",
+            "on-secondary-container": "#00714d",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "surface-tint": "#4d44e3",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary-fixed-variant": "#005236",
+            "on-primary-container": "#dad7ff",
+            "on-surface": "#131b2e",
+            "error": "#ba1a1a",
+            "primary": "#3525cd",
+            "error-container": "#ffdad6",
+            "surface": "#faf8ff",
+            "secondary-fixed": "#6ffbbe",
+            "outline-variant": "#c7c4d8",
+            "on-tertiary-container": "#ffd0d2",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#92002a",
+            "on-background": "#131b2e",
+            "surface-container-high": "#e2e7ff",
+            "secondary-fixed-dim": "#4edea3",
+            "tertiary-container": "#bf0f3c",
+            "inverse-surface": "#283044",
+            "inverse-on-surface": "#eef0ff",
+            "on-secondary-fixed": "#002113",
+            "background": "#faf8ff",
+            "on-primary-fixed": "#0f0069",
+            "surface-container-highest": "#dae2fd",
+            "tertiary-fixed": "#ffdadb",
+            "inverse-primary": "#c3c0ff",
+            "surface-bright": "#faf8ff",
+            "primary-container": "#4f46e5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "margin-desktop": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "space-md": "0.75rem",
+            "space-2xl": "2rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Be Vietnam Pro"],
+            "body-sm": ["Be Vietnam Pro"],
+            "headline-lg": ["Be Vietnam Pro"],
+            "headline-md": ["Be Vietnam Pro"],
+            "body-lg": ["Be Vietnam Pro"],
+            "overline": ["Be Vietnam Pro"],
+            "body-md": ["Be Vietnam Pro"],
+            "label-md": ["Be Vietnam Pro"],
+            "headline-xl": ["Be Vietnam Pro"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "overline": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-xl": ["30px", { "lineHeight": "38px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar (Shared Component from JSON) -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none docked full-width top-0 h-16 sm:h-20 sticky z-40">
+<div class="w-full px-4 sm:px-8 max-w-7xl mx-auto flex items-center justify-between h-full">
+<!-- Brand Logo & Main Navigation -->
+<div class="flex items-center gap-8 lg:gap-12">
+<a class="flex items-center gap-2 text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary cursor-pointer active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="school">school</span>
+<span>Việc học của tôi</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-6 lg:gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors cursor-pointer active:scale-95 duration-150" href="#">
+            To do list
+          </a>
+<!-- Active Tab: "Dự án" according to JSON Active Nav Style -->
+<a class="text-primary dark:text-inverse-primary font-label-md text-label-md border-b-2 border-primary dark:border-inverse-primary pb-1 cursor-pointer active:scale-95 duration-150" href="#">
+            Dự án
+          </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors cursor-pointer active:scale-95 duration-150" href="#">
+            Thời khóa biểu
+          </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors cursor-pointer active:scale-95 duration-150" href="#">
+            Pomodoro
+          </a>
+</nav>
+</div>
+<!-- Trailing Cluster: User Profile & Secondary Action -->
+<div class="flex items-center gap-3 sm:gap-4">
+<div class="flex items-center gap-3 bg-surface-container-low px-3 py-1.5 rounded-full border border-outline-variant/40">
+<img alt="Nguyễn Văn An avatar" class="w-8 h-8 rounded-full object-cover border border-primary-fixed" data-alt="Close up portrait photograph of an Asian student smiling enthusiastically in a modern university library illuminated by warm ambient study lamps, wearing a comfortable collegiate navy crewneck sweater, soft photographic depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKeDoiFxWvaOoZ2GZUpngDgtN4kBrd6fLmPYYlrJoPn-_kkgE1s6kZJJdA2ng_GT-4oy61wkndULIxNr7V3KK5EzA2-DJwTiNEXWqK1t0MqCnnwSxovCbDPRr-IwqJJXjlB6iXJpGEDkxTTwm1CF_0hGo0t59rgkeMcr2vATRgzlaeUNz1PVO645BZh0H7By1bWxlGuHjazbzEpLMOnXwSrEHFttVtvxrLUw45jujx0gWnBmdqPUX4">
+<div class="hidden sm:flex flex-col text-left">
+<span class="text-label-md font-label-md text-on-surface leading-tight">Nguyễn Văn An</span>
+<span class="text-overline font-overline text-primary">Học viên tích cực</span>
+</div>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-xl text-on-surface-variant hover:text-error hover:bg-error-container/40 border border-outline-variant/60 hover:border-error/40 transition-colors text-label-md font-label-md cursor-pointer active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="logout">logout</span>
+<span class="hidden sm:inline">Đăng xuất</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-6 sm:py-8 space-y-6">
+<!-- Top Headline Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<p class="text-overline font-overline text-primary tracking-wider uppercase mb-1">QUẢN LÝ DỰ ÁN &amp; TIẾN ĐỘ</p>
+<div class="flex items-center gap-3">
+<h1 class="text-headline-xl font-headline-xl text-on-surface">Dự án học tập của tôi</h1>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed-variant">
+            7 dự án
+          </span>
+</div>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-3">
+<div class="inline-flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-full border border-outline-variant/60 shadow-sm text-body-sm font-body-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span>Đang thực hiện: <strong class="text-on-surface font-semibold">5 dự án</strong></span>
+</div>
+<button class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary hover:opacity-95 px-5 py-2.5 rounded-2xl text-label-md font-label-md shadow-sm transition-all duration-150 active:scale-95 cursor-pointer" id="openModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+<span>Thêm dự án</span>
+</button>
+</div>
+</div>
+<!-- Quick Stats Banner -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-5 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="insights">insights</span>
+<span>Tiến độ tổng quan các dự án học kỳ</span>
+</div>
+<span class="text-primary font-headline-md text-headline-md">68%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-500" style="width: 68%;"></div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 mt-3 text-body-sm font-body-sm text-on-surface-variant">
+<span>Đã hoàn thành mục tiêu 4/7 giai đoạn</span>
+<span class="flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+          Đúng tiến độ kỳ báo cáo
+        </span>
+</div>
+</div>
+<!-- Filter & Segment Bar -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2">
+<!-- Tabs Switcher -->
+<div class="inline-flex p-1 bg-surface-container rounded-full border border-outline-variant/40 shadow-inner">
+<button class="px-5 py-2 rounded-full text-label-md font-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-150 flex items-center gap-2" id="tabPersonal" type="button">
+<span>Dự án cá nhân</span>
+<span class="w-5 h-5 rounded-full bg-primary-fixed text-primary text-xs flex items-center justify-center font-bold">4</span>
+</button>
+<button class="px-5 py-2 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-all duration-150 flex items-center gap-2" id="tabTeam" type="button">
+<span>Dự án nhóm</span>
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant text-xs flex items-center justify-center font-bold">3</span>
+</button>
+</div>
+<!-- Search & Sorting Filter -->
+<div class="flex items-center gap-3">
+<div class="relative flex-1 sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]" data-icon="search">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 text-body-sm font-body-sm bg-surface-container-lowest border border-outline-variant/60 rounded-xl focus:ring-1 focus:ring-primary focus:border-primary outline-none" placeholder="Tìm tên dự án, môn học..." type="text">
+</div>
+<button class="p-2 bg-surface-container-lowest border border-outline-variant/60 rounded-xl hover:bg-surface-container-low text-on-surface-variant transition-colors flex items-center justify-center cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Section: Personal Projects Tab Content -->
+<div class="space-y-4" id="personalSection">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<!-- Card 1: Nghiên cứu Khoa học Sinh viên -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/60 shadow-sm hover:shadow-md hover:border-outline transition-all duration-200 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-primary"></div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed-variant">
+                Đang tiến hành
+              </span>
+<div class="flex items-center gap-1 text-outline">
+<button class="p-1 hover:text-on-surface rounded transition-colors" title="Chỉnh sửa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:text-error rounded transition-colors" title="Xóa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface leading-snug mb-1">Nghiên cứu Đề tài Khoa học Sinh viên 2025</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 line-clamp-2">Nghiên cứu ứng dụng AI trong học tập và phân loại dữ liệu bài giảng số hóa.</p>
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Tiến độ</span>
+<span class="font-bold text-primary">65%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/40 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="calendar_today">calendar_today</span>
+              15/02/2025
+            </span>
+<span class="flex items-center gap-1 text-primary font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="event_upcoming">event_upcoming</span>
+              30/04/2025
+            </span>
+</div>
+</div>
+<!-- Card 2: Ôn thi IELTS 7.5 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/60 shadow-sm hover:shadow-md hover:border-outline transition-all duration-200 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-tertiary"></div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant">
+                Gần đến hạn
+              </span>
+<div class="flex items-center gap-1 text-outline">
+<button class="p-1 hover:text-on-surface rounded transition-colors" title="Chỉnh sửa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:text-error rounded transition-colors" title="Xóa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface leading-snug mb-1">Ôn thi chứng chỉ IELTS 7.5 Target</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 line-clamp-2">Luyện đề Listening &amp; Writing theo tuần kết hợp Speaking 1-on-1 định kỳ.</p>
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Tiến độ</span>
+<span class="font-bold text-tertiary">80%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-tertiary rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/40 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="calendar_today">calendar_today</span>
+              01/01/2025
+            </span>
+<span class="flex items-center gap-1 text-tertiary font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="alarm">alarm</span>
+              20/03/2025
+            </span>
+</div>
+</div>
+<!-- Card 3: Portfolio UI/UX -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/60 shadow-sm hover:shadow-md hover:border-outline transition-all duration-200 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-primary"></div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed-variant">
+                Đang tiến hành
+              </span>
+<div class="flex items-center gap-1 text-outline">
+<button class="p-1 hover:text-on-surface rounded transition-colors" title="Chỉnh sửa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:text-error rounded transition-colors" title="Xóa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface leading-snug mb-1">Xây dựng Portfolio thiết kế UI/UX cá nhân</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 line-clamp-2">Tổng hợp 3 case study sản phẩm số hóa hoàn chỉnh cho mùa tuyển dụng thực tập hè.</p>
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Tiến độ</span>
+<span class="font-bold text-primary">35%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 35%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/40 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="calendar_today">calendar_today</span>
+              01/02/2025
+            </span>
+<span class="flex items-center gap-1 text-primary font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="event_upcoming">event_upcoming</span>
+              15/05/2025
+            </span>
+</div>
+</div>
+<!-- Card 4: Tự học Machine Learning cơ bản -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/60 shadow-sm hover:shadow-md hover:border-outline transition-all duration-200 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-secondary"></div>
+<div>
+<div class="flex items-start justify-between gap-2 mb-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-secondary-container text-on-secondary-container">
+                Sắp hoàn thành
+              </span>
+<div class="flex items-center gap-1 text-outline">
+<button class="p-1 hover:text-on-surface rounded transition-colors" title="Chỉnh sửa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:text-error rounded transition-colors" title="Xóa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface leading-snug mb-1">Tự học Machine Learning qua khóa Coursera</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4 line-clamp-2">Hoàn thành bài tập Lab về Linear Regression và Logistic Regression bằng Python.</p>
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Tiến độ</span>
+<span class="font-bold text-secondary">88%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/40 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="calendar_today">calendar_today</span>
+              10/01/2025
+            </span>
+<span class="flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
+              10/03/2025
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Team Projects Tab Content (Hidden by default or toggled) -->
+<div class="hidden space-y-4" id="teamSection">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Team Project 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/60 shadow-sm hover:shadow-md transition-all duration-200 relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-primary"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed-variant">
+                  Đang tiến hành
+                </span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">4 thành viên</span>
+</div>
+<div class="flex items-center gap-1 text-outline">
+<button class="p-1 hover:text-on-surface rounded transition-colors" title="Chỉnh sửa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:text-error rounded transition-colors" title="Xóa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface leading-snug mb-1">Bài tập lớn môn Phát triển Ứng dụng Web</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Xây dựng hệ thống quản lý học tập kết hợp theo dõi thời gian Pomodoro và báo cáo bài tập tự động.</p>
+<!-- Overlapping Member Avatars -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center">
+<div class="relative group">
+<img alt="Nguyễn Văn An" class="w-9 h-9 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="Portrait photo of a young Vietnamese male team leader with spectacles smiling warmly against a bright neutral studio backdrop, light mode clean aesthetic, dressed in a minimal white casual shirt." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV60NfsfsY2Muh-8uDIue2hbTKr45uqLiHqm5B5iuG-mhlfsUmBYuyYhcGVe0ONi8GZlp02jGuxIk-E5IMZlmoFhKxQDHyou0yqN5DSH2Ls7-mQMnl5UIROryWOmC3NCCSJ9QXK9mUBVpES4QBimPk9_R5xS0lgW-Xu2h5PS3eaLg3jJW3ZJAmSq-s8_nX1tk1mDQhP5TAOz1RUslF1v85GrI_nOoGGQwrlqUX9TyE2f9KmyrujBgC">
+<span class="absolute -bottom-1 -right-1 bg-primary text-on-primary text-[9px] px-1 rounded-full font-bold">Trưởng nhóm</span>
+</div>
+<img alt="Lê Mai Anh" class="w-9 h-9 rounded-full border-2 border-surface-container-lowest object-cover -ml-2" data-alt="Portrait photo of a female student with soft natural lighting and friendly expression against a clean bright studio background, wearing a pastel sage green blazer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl6Y33qhw6VNEGemccJ08ONEsjppHaKVOKT22k6GKCN0N0g7FLW6wQuapV0aIxYZw8NK-kFWZ5V6d7CnDoYzNXXTZrngJF3_gd4R7gCGffCD7Sin24eJ6X4CQGtXEEPveHsf2NNW5O8Zyz4bLIalThIS9-b1k-ns0jSpEUBMMkhd1uuW5voNkyAWnE8_35jSjrqUFlBHC4uDHjQhSI4CrjQdRp3egCxyG6zJMETYif7diWT92hw4Fk">
+<img alt="Trần Quốc Bảo" class="w-9 h-9 rounded-full border-2 border-surface-container-lowest object-cover -ml-2" data-alt="Portrait photograph of a smiling young Asian male university student in modern library surroundings, crisp soft daylight lighting, collegiate navy blue hoodie." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6iGU9r8Y_IU9KFs5YYArsfYvEYZeG2b57dW8BAUR-QRXU9cOQ5ekKpiae26YFOxf_MvhDXWZIhzsIoMNpQw5oOQWz81rBIE-_r-NqNkPO8wzdWpt4Gnn8lNBghGODTxvFiUcfdwxPqs09wghc8-9IxLf25LWjrdYtaXw39_2d003Hc1-bKKeX9kkqgfFD231tMPp9hL1UHgWE18DVwL-6aPQ8ddYiowjZoWMCi40eOFLzswD-2vJv">
+<img alt="Đỗ Hải Nam" class="w-9 h-9 rounded-full border-2 border-surface-container-lowest object-cover -ml-2" data-alt="Modern candid portrait photograph of a cheerful young Vietnamese student wearing glasses outdoors in front of architectural campus arches, bright daytime light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8y6G2YgmJ5oUvl8_cAQylLOLscxfP5anc9krkyOYyZUTeOzvLJ005667YmhzwBoGhqbFEM39fwMyUOTORgmpwXdEIWlZGNxntAXQMYZwQDso3ewbM-tr2NVnzAKJe_TNdJ-FA-J55j8yycUcybIRQtIih156Niths1XAFiZJ3w2AKTkXzqlj6dbrAFLMeAr2uaEKwAQj_35428iIbrw0JURbS5f8VqFhS5knAkha6SSf1YpfOTcJF">
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Hạn chót: <strong class="text-on-surface">25/03/2025</strong></span>
+</div>
+<div class="space-y-1.5 mb-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Tiến độ nhóm</span>
+<span class="font-bold text-primary">70%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="task_alt">task_alt</span>
+              Đã nộp Sprint 2
+            </span>
+<button class="text-label-sm font-label-sm text-primary hover:underline flex items-center gap-1" type="button">
+              Xem chi tiết bảng phân công
+              <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Team Project 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/60 shadow-sm hover:shadow-md transition-all duration-200 relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-secondary"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-secondary-container text-on-secondary-container">
+                  Sắp hoàn thành
+                </span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">3 thành viên</span>
+</div>
+<div class="flex items-center gap-1 text-outline">
+<button class="p-1 hover:text-on-surface rounded transition-colors" title="Chỉnh sửa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1 hover:text-error rounded transition-colors" title="Xóa" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface leading-snug mb-1">Khảo sát thị trường Khởi nghiệp Xanh</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Khảo sát hành vi tiêu dùng sản phẩm tái chế của sinh viên các trường đại học tại Hà Nội.</p>
+<!-- Overlapping Member Avatars -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center">
+<img alt="Thành viên 1" class="w-9 h-9 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="Portrait photography of an Asian university student with bright smile in clean studio lighting with subtle warm tones, wearing casual modern office attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA09T2bL5Q45v15T8KZoYqynrdXk05w1sNfyjyfoXDjSEguBYl6lsr9nXJdLzhIRXvEDY4ezuke0hxApB8DXPm6lMxhTtuAh2eEDPQq_9HD2oUpl9ZFvyy0hAyjxV9-WZtRrmteepwHj7Ws4Dl1w-pkTZQnzKs7PGuDt5d2DSShBzgfK8SqpJoy_LXconuyGLxMVDwUfFTvY54TvkRrBpUBlExZSN46Qse6Dn0wnlJUovlCdqSz-jW6">
+<img alt="Thành viên 2" class="w-9 h-9 rounded-full border-2 border-surface-container-lowest object-cover -ml-2" data-alt="Studio portrait of a young Vietnamese female university researcher with short haircut, friendly expression, well-lit soft ambient light with pastel studio backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwRMoi89Kluhb_t9xcmUy3Fo6HSjn92p06llTAofpFtBiq-nY_ZrooAy8jXSFBYmlxzRa9j8MVURCgFY592WSmeDjvwZZk64SHsNccrIxvD9amcvwLFgBULgPLSmlvt1xZZc6VC1nwTDej9zgQTTEaIAR7H1jWo7VNtpDpQlOPqk0k59OiJzZ1vh061Pd66wRhl5p_xlZX0mekZzRRh2fVjCCGZUSSMd5LNm8jehNwCX5X9OmTZwOg">
+<img alt="Thành viên 3" class="w-9 h-9 rounded-full border-2 border-surface-container-lowest object-cover -ml-2" data-alt="Professional headshot of a friendly Asian male student with glasses in a bright campus study hall, modern casual sweater, clear cheerful lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1epKt9c7wZnTxeJRV5WNT2u3D0uAo_6ezHgzDNUWa1dcP1QZbA_40_Iuu1khzxo8J41af2xM9qZhwm_06t51aLEmOZqvJ6Ih2Qw7IzLpc8i9JsBT1L1HvSFPN6oxssYUVHF_jj4TWmT-7eeoeZjxLmbcQdW5AldFMMB6xXZWA8WRNwRakjh7XfwjO-2M8Zxr7SW01I5VgHhyjIW7Io6FC4n0EYXLY_LpcMnFSxmFAqrPfvW5RJox_">
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Hạn chót: <strong class="text-on-surface">18/03/2025</strong></span>
+</div>
+<div class="space-y-1.5 mb-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Tiến độ nhóm</span>
+<span class="font-bold text-secondary">90%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 90%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="done_all">done_all</span>
+              Đã hoàn tất báo cáo 60 trang
+            </span>
+<button class="text-label-sm font-label-sm text-primary hover:underline flex items-center gap-1" type="button">
+              Xem chi tiết bảng phân công
+              <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Motivational Study Tip Banner -->
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-2xl p-4 flex items-start sm:items-center gap-3">
+<div class="p-2 rounded-xl bg-primary-fixed text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="lightbulb">lightbulb</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface leading-relaxed">
+<strong class="font-semibold text-primary">Mẹo quản lý dự án:</strong> Chia nhỏ dự án lớn thành các mốc quan trọng (Milestones) và kết hợp kỹ thuật Pomodoro 25 phút giúp giảm quá tải và duy trì tính liên tục cho mục tiêu học tập.
+      </p>
+</div>
+</main>
+<!-- Modal: Thêm dự án mới (Dialog) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex items-center justify-center p-4" id="createProjectModal">
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/80 shadow-2xl max-w-xl w-full p-6 sm:p-7 relative transition-all">
+<!-- Close Button -->
+<button class="absolute top-5 right-5 text-outline hover:text-on-surface p-1 rounded-lg transition-colors cursor-pointer" id="closeModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+<!-- Modal Header -->
+<div class="mb-5">
+<span class="text-overline font-overline text-primary">TẠO MỚI</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Thêm dự án học tập</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Lập kế hoạch và thiết lập thời hạn rõ ràng cho mục tiêu của bạn.</p>
+</div>
+<!-- Form Body -->
+<form class="space-y-4" id="projectForm" onsubmit="event.preventDefault();">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Tên dự án <span class="text-error">*</span></label>
+<input class="w-full px-3.5 py-2 text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="Ví dụ: Đồ án tốt nghiệp, Luyện thi TOPIK II..." type="text">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Loại hình</label>
+<select class="w-full px-3.5 py-2 text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option value="personal">Dự án cá nhân</option>
+<option value="team">Dự án nhóm</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Mức độ ưu tiên</label>
+<select class="w-full px-3.5 py-2 text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option value="high">Cao (Gấp)</option>
+<option selected="" value="medium">Trung bình</option>
+<option value="normal">Bình thường</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Ngày bắt đầu</label>
+<input class="w-full px-3.5 py-2 text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary outline-none" type="date" value="2025-02-25">
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Hạn hoàn thành</label>
+<input class="w-full px-3.5 py-2 text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary outline-none" type="date" value="2025-04-30">
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Mô tả mục tiêu</label>
+<textarea class="w-full px-3.5 py-2 text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="Ghi chú chi tiết mục tiêu, tài liệu tham khảo..." rows="3"></textarea>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Thành viên tham gia (Nếu là dự án nhóm)</label>
+<input class="w-full px-3.5 py-2 text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="Nhập email hoặc tên thành viên nhóm..." type="text">
+</div>
+<!-- Modal Footer Actions -->
+<div class="pt-4 flex items-center justify-end gap-3 border-t border-outline-variant/40">
+<button class="px-5 py-2 rounded-xl border border-outline-variant text-on-surface-variant hover:bg-surface-container-low text-label-md font-label-md transition-colors cursor-pointer" id="cancelModalBtn" type="button">
+            Hủy bỏ
+          </button>
+<button class="px-6 py-2 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:opacity-95 shadow-sm active:scale-95 transition-all cursor-pointer" id="submitProjectBtn" type="button">
+            Tạo dự án
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Interactive JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Tab switching logic
+      const tabPersonal = document.getElementById('tabPersonal');
+      const tabTeam = document.getElementById('tabTeam');
+      const personalSection = document.getElementById('personalSection');
+      const teamSection = document.getElementById('teamSection');
+
+      tabPersonal.addEventListener('click', () => {
+        // Tab buttons styling
+        tabPersonal.className = "px-5 py-2 rounded-full text-label-md font-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-150 flex items-center gap-2";
+        tabTeam.className = "px-5 py-2 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-all duration-150 flex items-center gap-2";
+        
+        // Show personal, hide team
+        personalSection.classList.remove('hidden');
+        teamSection.classList.add('hidden');
+      });
+
+      tabTeam.addEventListener('click', () => {
+        // Tab buttons styling
+        tabTeam.className = "px-5 py-2 rounded-full text-label-md font-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-150 flex items-center gap-2";
+        tabPersonal.className = "px-5 py-2 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-all duration-150 flex items-center gap-2";
+        
+        // Show team, hide personal
+        teamSection.classList.remove('hidden');
+        personalSection.classList.add('hidden');
+      });
+
+      // Modal open / close logic
+      const openModalBtn = document.getElementById('openModalBtn');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const cancelModalBtn = document.getElementById('cancelModalBtn');
+      const submitProjectBtn = document.getElementById('submitProjectBtn');
+      const createProjectModal = document.getElementById('createProjectModal');
+
+      function openModal() {
+        createProjectModal.classList.remove('hidden');
+      }
+
+      function closeModal() {
+        createProjectModal.classList.add('hidden');
+      }
+
+      openModalBtn.addEventListener('click', openModal);
+      closeModalBtn.addEventListener('click', closeModal);
+      cancelModalBtn.addEventListener('click', closeModal);
+      submitProjectBtn.addEventListener('click', () => {
+        closeModal();
+      });
+
+      // Close modal on outside backdrop click
+      createProjectModal.addEventListener('click', (e) => {
+        if (e.target === createProjectModal) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+</body></html>

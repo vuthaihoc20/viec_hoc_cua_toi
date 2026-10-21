@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Việc học của tôi - Quản lý công việc</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#4d44e3",
+            "on-primary-fixed": "#0f0069",
+            "outline-variant": "#c7c4d8",
+            "secondary": "#006c49",
+            "background": "#f7f9fb",
+            "primary": "#3525cd",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e0e3e5",
+            "on-surface": "#191c1e",
+            "on-secondary-fixed": "#002113",
+            "on-primary-container": "#dad7ff",
+            "tertiary-fixed": "#ffdad7",
+            "surface-container-highest": "#e0e3e5",
+            "primary-container": "#4f46e5",
+            "on-error": "#ffffff",
+            "surface-container": "#eceef0",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#2d3133",
+            "tertiary-fixed-dim": "#ffb3ad",
+            "surface-container-high": "#e6e8ea",
+            "on-primary-fixed-variant": "#3323cc",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#410004",
+            "secondary-container": "#6cf8bb",
+            "on-tertiary-fixed-variant": "#930013",
+            "primary-fixed": "#e2dfff",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f2f4f6",
+            "on-error-container": "#93000a",
+            "on-background": "#191c1e",
+            "inverse-on-surface": "#eff1f3",
+            "surface-bright": "#f7f9fb",
+            "surface": "#f7f9fb",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#005236",
+            "outline": "#777587",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#6ffbbe",
+            "on-tertiary-container": "#ffd0cc",
+            "tertiary": "#960014",
+            "secondary-fixed-dim": "#4edea3",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-surface-variant": "#464555",
+            "tertiary-container": "#bc1d25",
+            "inverse-primary": "#c3c0ff",
+            "surface-dim": "#d8dadc",
+            "on-secondary-container": "#00714d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "0.75rem",
+            "gutter": "1.25rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "space-xl": "2rem",
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "title-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow-card {
+      box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+    }
+    .custom-shadow-card:hover {
+      box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar (Shared Component implementation according to JSON specs) -->
+<header class="bg-surface-container-lowest shadow-sm border-b border-surface-container-high sticky top-0 z-40 w-full">
+<div class="max-w-7xl mx-auto h-16 px-gutter md:px-margin flex items-center justify-between">
+<!-- Brand & Left Navigation -->
+<div class="flex items-center gap-space-lg">
+<a class="flex items-center gap-space-xs font-headline-sm text-headline-sm font-bold text-primary tracking-tight" href="#">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+<span>Việc học của tôi</span>
+</a>
+<!-- Desktop Navigation Links: Dự án is ACTIVE -->
+<nav class="hidden md:flex items-center space-x-6 ml-4">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="#">To do list</a>
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Dự án</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="#">Thời khóa biểu</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="#">Pomodoro</a>
+</nav>
+</div>
+<!-- User Profile & Secondary Action (Đăng xuất) -->
+<div class="flex items-center gap-space-md">
+<!-- User Badge -->
+<div class="flex items-center gap-space-sm pl-2 py-1 pr-3 rounded-full bg-surface-container-low border border-surface-container-high">
+<img alt="Ảnh đại diện người dùng học sinh" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-container-lowest" data-alt="A bright and friendly photographic avatar of a Vietnamese university student wearing clean casual attire, smiling warmly against a soft-focus modern library backdrop with natural daylight illumination and balanced minimalist colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtnbZwVoTML9ODQA0QR2PZDRMT0CxnCWyCyRfHw7gfBN5AzmiLVL0q4M6sSyK4PhSQjDRd4_J-EYA_3csZ3q4G8ifGcWizuItAL3tzh6ZJfTMscIu-7RgnCRstnxnP_n4uLX2Xg9IcrCfPDWIpMrmbQUaUwRMouAMpOT1-DpY6bhDUpq0mYu-325SLJj6gnkIRWPC9DXi1dewza7TMnHl1OBDkTpeoda76ys3XOxD-_lh8Rg01iFlp7A"/>
+<div class="flex flex-col text-left">
+<span class="font-title-sm text-title-sm text-on-surface leading-tight">Nguyễn Văn An</span>
+<span class="font-label-sm text-label-sm text-outline hidden sm:inline">Học viên tích cực</span>
+</div>
+</div>
+<!-- Trailing Secondary Action: Đăng xuất -->
+<button aria-label="Đăng xuất khỏi tài khoản" class="flex items-center gap-space-xs px-3 py-1.5 rounded-lg border border-surface-container-high bg-surface-container-lowest text-on-surface hover:text-error hover:border-error-container hover:bg-error-container/20 transition-all duration-150 active:scale-95 font-title-sm text-title-sm" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+<span class="hidden sm:inline">Đăng xuất</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Canvas Container -->
+<main class="flex-grow w-full max-w-4xl mx-auto px-gutter-mobile sm:px-gutter md:px-margin py-space-xl">
+<!-- Top Welcome & Mini Progress Card -->
+<section class="mb-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Bảng công việc học tập</span>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight mt-0.5">Hôm nay cần tập trung gì?</h1>
+</div>
+<!-- Quick Counter Badge -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-lowest border border-surface-container-high rounded-full self-start sm:self-auto custom-shadow-card">
+<span class="material-symbols-outlined text-secondary text-base" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-title-sm text-title-sm text-on-surface">Hôm nay: <strong class="text-secondary">3/5</strong> công việc hoàn thành</span>
+</div>
+</div>
+<!-- Elegant Thin Progress Bar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-surface-container-high custom-shadow-card">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base" data-icon="trending_up">trending_up</span>
+            Tiến độ hoàn thành nhiệm vụ
+          </span>
+<span class="font-title-sm text-title-sm font-bold text-primary">60%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-container to-secondary rounded-full transition-all duration-500 ease-out" style="width: 60%;"></div>
+</div>
+</div>
+</section>
+<!-- New Task Input Card -->
+<section class="mb-space-lg">
+<form class="bg-surface-container-lowest p-2.5 sm:p-3 rounded-xl border border-surface-container-high custom-shadow-card flex flex-col sm:flex-row items-stretch gap-2.5 transition-all focus-within:border-primary-container focus-within:ring-2 focus-within:ring-primary-container/20">
+<div class="relative flex-grow flex items-center pl-2">
+<span class="material-symbols-outlined text-outline absolute left-3 pointer-events-none text-xl" data-icon="edit_note">edit_note</span>
+<input class="w-full pl-9 pr-3 py-2.5 text-on-surface bg-transparent border-0 focus:ring-0 font-body-md text-body-md placeholder:text-outline placeholder:font-body-sm" placeholder="Nhập tên công việc học tập mới (ví dụ: Làm bài tập Toán trang 45, Đọc chương 3 Lịch sử)..." type="text"/>
+</div>
+<button class="inline-flex items-center justify-center gap-1.5 bg-primary-container hover:bg-primary text-on-primary px-5 py-2.5 rounded-lg font-title-sm text-title-sm font-semibold shadow-sm hover:shadow active:scale-95 transition-all duration-150 shrink-0" type="button">
+<span class="material-symbols-outlined text-lg font-bold" data-icon="add">add</span>
+<span>Thêm công việc</span>
+</button>
+</form>
+</section>
+<!-- Filter Tabs (Pill style) -->
+<section class="mb-space-md flex items-center justify-between flex-wrap gap-2">
+<div class="inline-flex p-1 bg-surface-container-high/60 rounded-full border border-surface-container-high">
+<!-- Tab 1: Active -->
+<button class="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-surface-container-lowest text-primary font-title-sm text-title-sm shadow-sm transition-all duration-150" type="button">
+<span>Tất cả</span>
+<span class="inline-flex items-center justify-center px-1.5 py-0.2 bg-primary-fixed text-on-primary-fixed rounded-full text-xs font-bold leading-none min-w-[20px] h-5">5</span>
+</button>
+<!-- Tab 2: Inactive -->
+<button class="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-title-sm text-title-sm transition-all duration-150" type="button">
+<span>Chưa xong</span>
+<span class="inline-flex items-center justify-center px-1.5 py-0.2 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-bold leading-none min-w-[20px] h-5">2</span>
+</button>
+<!-- Tab 3: Inactive -->
+<button class="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-title-sm text-title-sm transition-all duration-150" type="button">
+<span>Đã xong</span>
+<span class="inline-flex items-center justify-center px-1.5 py-0.2 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-bold leading-none min-w-[20px] h-5">3</span>
+</button>
+</div>
+<!-- Quick status indicator helper -->
+<span class="font-label-sm text-label-sm text-outline hidden sm:block">Sắp xếp theo hạn chót</span>
+</section>
+<!-- Task List -->
+<section aria-label="Danh sách công việc học tập" class="space-y-space-sm">
+<!-- Mục 1: Chưa hoàn thành -->
+<article class="group bg-surface-container-lowest rounded-xl border border-surface-container-high p-space-md custom-shadow-card hover:border-outline-variant transition-all duration-150 relative overflow-hidden flex items-start gap-space-md">
+<!-- Inset Semantic Indicator Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary"></div>
+<!-- Custom Checkbox (Unchecked) -->
+<label class="relative flex items-center pt-0.5 cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-5 h-5 rounded border-2 border-outline-variant bg-surface-container-lowest peer-hover:border-primary peer-focus:ring-2 peer-focus:ring-primary-container/20 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-transparent text-sm pointer-events-none select-none" data-icon="check">check</span>
+</div>
+</label>
+<!-- Task Body -->
+<div class="flex-grow min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<h2 class="font-title-md text-title-md text-on-surface font-semibold truncate leading-snug">Hoàn thiện báo cáo thí nghiệm Hóa học hữu cơ</h2>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<!-- Subject Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-primary font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="science">science</span>
+              Hóa học
+            </span>
+<!-- Due Badge (Urgent) -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-tertiary font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+              Hạn chót: Hôm nay, 17:00
+            </span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-1 shrink-0 self-center">
+<button class="p-2 text-outline hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors" title="Sửa công việc" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+<span class="sr-only">Sửa</span>
+</button>
+<button class="p-2 text-outline hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Xóa công việc" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+<span class="sr-only">Xóa</span>
+</button>
+</div>
+</article>
+<!-- Mục 2: Chưa hoàn thành -->
+<article class="group bg-surface-container-lowest rounded-xl border border-surface-container-high p-space-md custom-shadow-card hover:border-outline-variant transition-all duration-150 relative overflow-hidden flex items-start gap-space-md">
+<!-- Inset Semantic Indicator Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<!-- Custom Checkbox (Unchecked) -->
+<label class="relative flex items-center pt-0.5 cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-5 h-5 rounded border-2 border-outline-variant bg-surface-container-lowest peer-hover:border-primary peer-focus:ring-2 peer-focus:ring-primary-container/20 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-transparent text-sm pointer-events-none select-none" data-icon="check">check</span>
+</div>
+</label>
+<!-- Task Body -->
+<div class="flex-grow min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<h2 class="font-title-md text-title-md text-on-surface font-semibold truncate leading-snug">Ôn tập 50 từ vựng tiếng Anh bài Unit 8</h2>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<!-- Subject Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="language">language</span>
+              Tiếng Anh
+            </span>
+<!-- Due Badge (Normal) -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="event">event</span>
+              Ngày mai
+            </span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-1 shrink-0 self-center">
+<button class="p-2 text-outline hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors" title="Sửa công việc" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+<span class="sr-only">Sửa</span>
+</button>
+<button class="p-2 text-outline hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Xóa công việc" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+<span class="sr-only">Xóa</span>
+</button>
+</div>
+</article>
+<!-- Mục 3: Đã hoàn thành -->
+<article class="group bg-surface-container-lowest/80 rounded-xl border border-surface-container-high/80 p-space-md custom-shadow-card hover:border-outline-variant transition-all duration-150 relative overflow-hidden flex items-start gap-space-md">
+<!-- Inset Semantic Indicator Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<!-- Custom Checkbox (Checked Emerald) -->
+<label class="relative flex items-center pt-0.5 cursor-pointer select-none">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-5 h-5 rounded border-2 border-secondary bg-secondary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-on-secondary text-sm pointer-events-none select-none" data-icon="check">check</span>
+</div>
+</label>
+<!-- Task Body -->
+<div class="flex-grow min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<h2 class="font-title-md text-title-md text-outline line-through truncate leading-snug">Làm bài tập trắc nghiệm Toán giải tích chương 2</h2>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<!-- Subject Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="calculate">calculate</span>
+              Toán học
+            </span>
+<!-- Completed Status Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="done_all">done_all</span>
+              Đã hoàn thành
+            </span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-1 shrink-0 self-center">
+<button class="p-2 text-outline/70 hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors" title="Sửa công việc" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+<span class="sr-only">Sửa</span>
+</button>
+<button class="p-2 text-outline/70 hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Xóa công việc" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+<span class="sr-only">Xóa</span>
+</button>
+</div>
+</article>
+<!-- Mục 4: Đã hoàn thành -->
+<article class="group bg-surface-container-lowest/80 rounded-xl border border-surface-container-high/80 p-space-md custom-shadow-card hover:border-outline-variant transition-all duration-150 relative overflow-hidden flex items-start gap-space-md">
+<!-- Inset Semantic Indicator Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<!-- Custom Checkbox (Checked Emerald) -->
+<label class="relative flex items-center pt-0.5 cursor-pointer select-none">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-5 h-5 rounded border-2 border-secondary bg-secondary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-on-secondary text-sm pointer-events-none select-none" data-icon="check">check</span>
+</div>
+</label>
+<!-- Task Body -->
+<div class="flex-grow min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<h2 class="font-title-md text-title-md text-outline line-through truncate leading-snug">Đọc tài liệu Triết học Mác - Lênin tuần 4</h2>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<!-- Completed Status Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="done_all">done_all</span>
+              Đã hoàn thành
+            </span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-1 shrink-0 self-center">
+<button class="p-2 text-outline/70 hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors" title="Sửa công việc" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+<span class="sr-only">Sửa</span>
+</button>
+<button class="p-2 text-outline/70 hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Xóa công việc" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+<span class="sr-only">Xóa</span>
+</button>
+</div>
+</article>
+<!-- Mục 5: Đã hoàn thành -->
+<article class="group bg-surface-container-lowest/80 rounded-xl border border-surface-container-high/80 p-space-md custom-shadow-card hover:border-outline-variant transition-all duration-150 relative overflow-hidden flex items-start gap-space-md">
+<!-- Inset Semantic Indicator Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<!-- Custom Checkbox (Checked Emerald) -->
+<label class="relative flex items-center pt-0.5 cursor-pointer select-none">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-5 h-5 rounded border-2 border-secondary bg-secondary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-on-secondary text-sm pointer-events-none select-none" data-icon="check">check</span>
+</div>
+</label>
+<!-- Task Body -->
+<div class="flex-grow min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<h2 class="font-title-md text-title-md text-outline line-through truncate leading-snug">Nộp slide thuyết trình nhóm môn Kỹ năng mềm</h2>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<!-- Completed Status Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="done_all">done_all</span>
+              Đã hoàn thành
+            </span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-1 shrink-0 self-center">
+<button class="p-2 text-outline/70 hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors" title="Sửa công việc" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+<span class="sr-only">Sửa</span>
+</button>
+<button class="p-2 text-outline/70 hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Xóa công việc" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+<span class="sr-only">Xóa</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Academic Motivation Quote Footer Card -->
+<div class="mt-space-xl p-space-md rounded-xl bg-surface-container-low/60 border border-surface-container-high flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="lightbulb">lightbulb</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="font-medium text-on-surface">Mẹo học tập:</strong> Chia nhỏ các bài tập dài thành các phiên tập trung 25 phút (Pomodoro) giúp tăng tốc độ hoàn thành lên đến 40%.
+      </p>
+</div>
+</main>
+<!-- Footer (Shared Component implementation according to JSON specs) -->
+<footer class="bg-surface-container-lowest border-t border-surface-container-high mt-auto">
+<div class="w-full py-space-md px-gutter md:px-margin max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<p class="font-body-sm text-body-sm text-outline text-center sm:text-left">
+        © 2025 Việc học của tôi. Không gian rèn luyện tri thức tập trung.
+      </p>
+<div class="flex items-center space-x-6">
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors duration-150" href="#">Hướng dẫn sử dụng</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors duration-150" href="#">Điều khoản</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors duration-150" href="#">Hỗ trợ học tập</a>
+</div>
+</div>
+</footer>
+</body></html>
